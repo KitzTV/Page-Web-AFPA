@@ -9,7 +9,7 @@ nav {
     padding: 16px 18px;
 }
 
-label,
+.label_burger,
 #toggle {
     display: none;
 }
@@ -45,8 +45,13 @@ body>header>nav>ul {
 }
 
 a {
-    text-decoration: underline;
+    text-decoration: none;
     color: black;
+}
+
+a:hover {
+    color: #86bd24;
+    transition: 0.3s;
 }
 
 @media screen and (max-width: 1071px) {
@@ -60,7 +65,7 @@ a {
         background: green;
     }
 
-    label {
+    .label_burger {
         width: 30px;
         display: flex;
         justify-content: right;
@@ -79,41 +84,12 @@ main {
     flex-direction: column;
     align-items: center;
     background-size: cover;
-    background-image: linear-gradient(to top, #EE4A7D 0%, #462D89 100%);
+    background-position: center;
     min-height: 100vh;
+    position: relative;
+    background-image: linear-gradient(to top, #85bd24, transparent 80% 50%, #452d89 50%, transparent 50%), url(./assets/SiteDWWM/Images/A2-1920.jpg);
     z-index: 0;
-}
-
-.wrapper {
-    display: flex;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0.5;
-    z-index: -1;
-}
-
-.background_image {
-}
-
-.main_index {
-    /* Placeholder */
-}
-
-.main_formation {
-    background-image: linear-gradient(to top, #468AC9 0%, #462D89 100%);
-}
-
-.main_contact {
-    background-image: linear-gradient(to top, #FCD20E 0%, #462D89 100%);
-}
-
-.main_references {
-    background-image: linear-gradient(to top, #F04925 0%, #462D89 100%);
-}
-
-.main_temoignages {
-    background-image: linear-gradient(to top, #7FC241 0%, #462D89 100%);
+    color: white;
 }
 
 .content_formation {
@@ -139,12 +115,96 @@ main {
 .formation_list {
     display: flex;
     flex-direction: row;
+    color: white;
 }
 
-h1,
-h2,
-button {
-    margin: 5vh;
+.temoignages_h1 {
+    padding: 5vh 0 0 0;
+    margin: 5vh 0 0 0;
+}
+
+.content_temoignages {
+    gap: 5vh;
+    padding: 10vh;
+    max-width: 100vw;
+}
+
+.temoignages_tile {
+    font-size: 24px;
+    list-style: none;
+    max-width: 60vw;
+    padding: 10vh;
+}
+
+.temoignages_tile_image {
+    height: 90px;
+    width: 90px;
+}
+
+.temoignages_tile_title {
+    max-width: 30vw;
+    font-weight: bold;
+    font-size: 36px;
+    text-align: top left;
+}
+
+.temoignages_list {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.references_h1 {
+    max-width: 60vw;
+}
+
+.references_list {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    list-style: none;
+}
+
+.references_images_list {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 24px;
+    height: 92px;
+    width: 80px;
+}
+
+
+form {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    align-items: left;
+}
+
+.radio_ul {
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    padding: 0;
+    margin: 16px;
+    border-style: solid;
+    border-radius: 1vh;
+    border-color: white;
+}
+
+.radio_li {
+    list-style: none;
+    padding: 8px;
+}
+
+.burger_label {
+    padding: 0 0 0 16px;
+}
+
+input {
+    padding: 12px 16px;
+    margin: 16px 16px;
+    border-radius: 8px;
 }
 
 h1 {
@@ -154,6 +214,8 @@ h1 {
     max-width: 90vh;
     max-height: 40vh;
     padding: 5vh;
+    margin: 5vh;
+    color: white;
 }
 
 h2 {
@@ -161,6 +223,8 @@ h2 {
     text-align: center;
     max-width: 90vh;
     max-height: 40vh;
+    margin: 5vh;
+    color: white;
 }
 
 button {
@@ -170,8 +234,22 @@ button {
     height: 4vh;
     border-radius: 2vh;
     border: none;
-    background-color: #7FC241;
+    background-color: #ee4a7d;
     cursor: pointer;
+    margin: 5vh;
+    color: white;
+}
+
+.form_button {
+    align-self: center;
+}
+
+.form_selector {
+    margin: 16px 24px;
+    padding: 5px;
+    border-radius: 1vh;
+    max-width: 20vh;
+    text-align: center;
 }
 
 footer {
@@ -179,7 +257,7 @@ footer {
     align-items: center;
     padding: 18px 24px;
     height: 99px;
-    background-image: url(./assets/SiteDWWM/Images/A3-1920.jpg);
+    background-color: #86BD24;
     background-position: center;
 }
 
