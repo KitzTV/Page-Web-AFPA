@@ -1,5 +1,25 @@
+@font-face {
+    font-family: gotham-black;
+    src: url(./Fonts/Gotham/Gotham-Black.otf);
+}
+
+@font-face {
+    font-family: gotham-light;
+    src: url(./Fonts/Gotham/Gotham-Light.otf);
+}
+
+@font-face {
+    font-family: gotham-medium;
+    src: url(./Fonts/Gotham/Gotham-Medium.otf);
+}
+
+@font-face {
+    font-family: gotham-bold;
+    src: url(./Fonts/Gotham/Gotham-Bold.otf)
+}
+
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: gotham-light, Arial, Helvetica, sans-serif;
     max-width: 100%;
 }
 
@@ -44,6 +64,58 @@ body>header>nav>ul {
     padding: 0;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 80vh;
+    position: relative;
+    background-image: url(./assets/SiteDWWM/Images/A2-1920.jpg);
+    z-index: 0;
+    color: white;
+}
+
+main::after {
+    content: '';
+    position: absolute;
+    background-image: linear-gradient(to top, #85bd24, transparent 80% 50%, #452d89 50%, transparent 50%);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.main_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+h1 {
+    font-family: gotham-bold;
+    font-weight: bolder;
+    font-size: 64px;
+    text-align: center;
+    max-width: 90vh;
+    max-height: 40vh;
+    padding: 5vh 0 0 0;
+    margin: 5vh;
+    color: white;
+}
+
+h2 {
+    font-size: 40px;
+    text-align: center;
+    max-width: 90vh;
+    max-height: 40vh;
+    margin: 5vh;
+    color: white;
+}
+
 a {
     text-decoration: none;
     color: black;
@@ -54,45 +126,9 @@ a:hover {
     transition: 0.3s;
 }
 
-@media screen and (max-width: 1071px) {
-    body>header>nav>ul {
-        height: 60px;
-    }
-
-    nav .main_pages {
-        display: none;
-        flex-direction: column;
-        background: green;
-    }
-
-    .label_burger {
-        width: 30px;
-        display: flex;
-        justify-content: right;
-        margin-left: auto;
-        font-size: 40px;
-        cursor: pointer;
-    }
-
-    #toggle:checked+.main_pages {
-        display: flex;
-    }
-}
-
-main {
+.content_formation {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh;
-    position: relative;
-    background-image: linear-gradient(to top, #85bd24, transparent 80% 50%, #452d89 50%, transparent 50%), url(./assets/SiteDWWM/Images/A2-1920.jpg);
-    z-index: 0;
-    color: white;
-}
-
-.content_formation {
     gap: 5vh;
     padding: 10vh;
     max-width: 100vw;
@@ -125,7 +161,7 @@ main {
 
 .content_temoignages {
     gap: 5vh;
-    padding: 10vh;
+    padding: 0 10vh 10vh 10vh;
     max-width: 100vw;
 }
 
@@ -211,30 +247,10 @@ input {
     border: 0px;
 }
 
-h1 {
-    font-weight: bolder;
-    font-size: 96px;
-    text-align: center;
-    max-width: 90vh;
-    max-height: 40vh;
-    padding: 5vh 0 0 0;
-    margin: 5vh;
-    color: white;
-}
-
-h2 {
-    font-size: 64px;
-    text-align: center;
-    max-width: 90vh;
-    max-height: 40vh;
-    margin: 5vh;
-    color: white;
-}
-
 button {
     font-weight: bold;
     text-align: center;
-    width: 50vh;
+    width: 20vw;
     height: 4vh;
     border-radius: 2vh;
     border: none;
@@ -277,4 +293,89 @@ footer {
     flex-direction: row;
     list-style: none;
     margin-left: auto;
+}
+
+@media screen and (max-width: 585px) {
+
+    .references_list {
+        padding: 0;
+    }
+
+    .main_references img {}
+}
+
+@media screen and (max-width: 990px) {
+
+    main {
+        justify-content: flex-start;
+        min-height: 75vh;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    button {
+        width: 40vw;
+    }
+
+    body>header>nav>ul {
+        height: 60px;
+    }
+
+    nav .main_pages {
+        display: none;
+        flex-direction: column;
+    }
+
+    footer img.logo {
+        padding: 0;
+    }
+
+    footer {
+        justify-content: space-around;
+    }
+
+    .label_burger {
+        width: 30px;
+        display: flex;
+        justify-content: right;
+        margin-left: auto;
+        font-size: 40px;
+        cursor: pointer;
+    }
+
+    #toggle:checked+.main_pages {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    nav li a {
+        font-size: 16px;
+    }
+
+    .formation_list {
+        flex-direction: column;
+        padding: 5px;
+        margin: 0;
+    }
+
+    .content_formation {
+        max-width: 80vw;
+        padding: 5px;
+        margin: 5vh 0 0 0;
+        align-content: space-between;
+    }
+
+    .formation_tile {
+        border-radius: 1vh;
+        max-width: 80vw;
+        padding: 0 0 30px 0;
+        margin: 1vh;
+    }
 }
